@@ -1,6 +1,8 @@
 package com.fort;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.Group;
 import javafx.scene.image.Image;
@@ -19,10 +21,10 @@ public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        // Using javafx.scene.Group for layout. There are other options.
-        Group root = new Group();
+        // Using the login page to start the app
+        Parent root = FXMLLoader.load(getClass().getResource("/Login.fxml"));
         // Create a new scene
-        Scene scene = new Scene(root, Color.DARKGRAY);
+        Scene scene = new Scene(root);
 
         Image icon = new Image(getClass().getResource("/FortIcon.png").toExternalForm());
         stage.getIcons().add(icon);
